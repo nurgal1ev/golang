@@ -1,25 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	score := 18
-	/*
-		if score > 15 {
-			if score > 15 {
-				fmt.Println("great")
-			} else {
-				fmt.Println("good")
-			}
-		} else {
-			fmt.Println("bad")
-		}*/
-
-	if score > 15 {
-		fmt.Println("great")
-	} else if score > 10 {
-		fmt.Println("good")
-	} else {
-		fmt.Println("bad")
+	for i := 0; i <= 5; i++ {
+		fmt.Println("итерация: ", i)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
