@@ -3,27 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("до вызова функции")
+	fmt.Println("main start")
+	defer func() {
+		fmt.Println("main end")
+	}()
 	hello()
-	square(5)
-	helloUser("ivan")
-	sum(5, 7)
-	fmt.Println("после вызова функции")
 }
 
 func hello() {
-	fmt.Println("функция hello")
-}
+	fmt.Println("hello start")
+	defer func() {
+		fmt.Println("hello end")
+	}()
 
-func square(x int) {
-	fmt.Println("функция square: x * x =", x*x)
-}
-
-func helloUser(name string) {
-	fmt.Println(" hello,", name)
-}
-
-func sum(a int, b int) int {
-	result := a + b
-	return result
+	fmt.Println("hello func 1")
+	fmt.Println("hello func 2")
+	fmt.Println("hello func 3")
 }
