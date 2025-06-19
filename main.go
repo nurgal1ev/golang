@@ -3,20 +3,29 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("main start")
-	defer func() {
-		fmt.Println("main end")
-	}()
-	hello()
+	number := 5
+	num(number)
+	//fmt.Println(number)
+	pointer := &number
+	point(pointer)
+	fmt.Println(number)
+	nilPointer()
 }
 
-func hello() {
-	fmt.Println("hello start")
-	defer func() {
-		fmt.Println("hello end")
-	}()
+func point(n *int) {
+	fmt.Println("указатель на тип данных:", n)
+	fmt.Println("указатель на значение переменной:", *n)
+	*n = 10
+}
 
-	fmt.Println("hello func 1")
-	fmt.Println("hello func 2")
-	fmt.Println("hello func 3")
+func num(n int) {
+	n = 10
+}
+
+func nilPointer() {
+	number := 2
+	fmt.Println(number)
+
+	var ptr *int
+	fmt.Println(ptr)
 }
