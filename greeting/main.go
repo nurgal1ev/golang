@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"golanggit/greeting"
-	"golanggit/user"
 )
 
 func main() {
@@ -12,6 +11,4 @@ func main() {
 	greeting.SayBad()
 	i := greeting.GiveMeInt()
 	fmt.Println(i)
-
-	u := user.User{}
 }
